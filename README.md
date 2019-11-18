@@ -17,7 +17,7 @@ Learning Objectives
 * How to suspend the execution of a process until one of its children terminates
 * What is EOF / "end-of-file"?
 
-#About:
+# About:
 
 The **Shell** is a command interpretor in an operating system such as **Unix** or **GNU/Linux**, it is a program that executes other programs. It provides a computer user an interface to the UNIX/GNU Linux system so that the user can run different commands or utilities/tools with some input data.
 The shell is both an interactive command language and a script language, and is used by the operating system to control the execution of the system using shell scripts, It was first conceived by Ken Thompson in 1971.
