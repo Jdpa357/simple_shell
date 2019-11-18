@@ -16,6 +16,7 @@ typedef struct path_t
 
 /** String helpers */
 int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
 
 /** Processing functions */
 char *read_line_prompt(void);
