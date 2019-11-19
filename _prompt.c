@@ -19,6 +19,6 @@ char *read_line_prompt(void)
 	length = _strlen(line);
 	line[length - 1] = '\0';
 
-	return(line);
+	return (line);
 
 }
