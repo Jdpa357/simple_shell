@@ -22,4 +22,8 @@ int _strcmp(char *s1, char *s2);
 /** Processing functions */
 char *read_line_prompt(void);
 
+/** executor */
+int _exec(char **args, char **env);
+
+
 #endif

@@ -4,7 +4,7 @@
 /**
  * _strlen - Helper function to count the length of a string
  *
- * @s: Pointer to a string of chars to process by the function 
+ * @s: Pointer to a string of chars to process by the function
  * Return: The length of the string processed
  */
 
@@ -36,6 +36,8 @@ int _strcmp(char *s1, char *s2)
 {
 	int len = 0;
 
+	if (s1 == NULL || s2 == NULL)
+		return (-1);
 	do {
 		if (s1[len] - s2[len] != 0)
 			return (s1[len] - s2[len]);
