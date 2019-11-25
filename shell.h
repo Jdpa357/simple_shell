@@ -15,12 +15,16 @@ typedef struct path_t
 	struct path_t *next;
 } path_l;
 
+/** Signal Handler */
+void exception_handler(int sig_num);
+
 /** String helpers */
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 
 /** Processing functions */
 char *read_line_prompt(void);
+int _dirch(char **cmm);
 
 /** executor */
 int _exec(char **args, char **env);

@@ -15,6 +15,8 @@ int main(int ac __attribute__((__unused__)),
 	char *c, *buff[90];
 	ssize_t looper = 1;
 
+	signal(SIGINT, exception_handler);
+
 	while (looper != EOF)
 	{
 		int i = 0;
@@ -30,10 +32,14 @@ int main(int ac __attribute__((__unused__)),
 
 		if (!_strcmp(buff[0], "exit"))
 			exit(0);
-
-		_exec(buff, env);
+		else if (!_strcmp(buff[0], "cd"))
+		{
+			_dirch(buff);
+		}
+		else
+		{
+			_exec(buff, env);
+		}
 	}
 	return (0);
 }
-
-
