@@ -9,8 +9,8 @@
  * Return: 0 always (Success);
  */
 
-int main(int ac __attribute__((__unused__)),
-		char **av __attribute__((__unused__)), char **env)
+int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
+		char **env)
 {
 	char *c, *buff[90];
 	ssize_t looper = 1;
@@ -40,6 +40,7 @@ int main(int ac __attribute__((__unused__)),
 		{
 			_exec(buff, env);
 		}
+		free(c);
 	}
 	return (0);
 }

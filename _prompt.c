@@ -27,6 +27,6 @@ char *read_line_prompt(void)
 		}
 		length = _strlen(line);
 		line[length - 1] = '\0';
-	} while (line == NULL);
+	} while (line == NULL || *line == '\0');
 	return (line);
 }

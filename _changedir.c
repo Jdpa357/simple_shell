@@ -3,7 +3,7 @@
 /**
  * _dirch - Implements the directory change
  *
- * @cmm: Parameter of the directory to change to. if no directory is given, 
+ * @cmm: Parameter of the directory to change to. if no directory is given,
  * change to home directory
  * Return: Always 0 (Success)
  */
@@ -22,7 +22,7 @@ int _dirch(char **cmm)
 	}
 	else if (*cmm[1] == '-' && !cmm[1][1])
 	{
-		write(STDIN_FILENO, "home/vagrant\n", 15);
+		write(STDIN_FILENO, "home/vagrant\n", 13);
 		if (chdir("/home/vagrant") == 0)
 			getcwd(dir, sizeof(dir));
 		return (0);
