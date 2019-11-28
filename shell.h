@@ -21,7 +21,7 @@ char *_strcpy(char *dest, char *src);
 
 /** Processing functions */
 char *read_line_prompt(void);
-int _dirch(char **cmm);
+int _dirch(char **cmm, char **env);
 
 /** executor */
 int _exec(char **args, char **env);

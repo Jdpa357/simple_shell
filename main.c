@@ -34,7 +34,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
 			exit(0);
 		else if (!_strcmp(buff[0], "cd"))
 		{
-			_dirch(buff);
+			_dirch(buff, env);
 		}
 		else
 		{

@@ -8,22 +8,27 @@
  * Return: Always 0 (Success)
  */
 
-int _dirch(char **cmm)
+int _dirch(char **cmm, char **env)
 {
 
-	int stat = 0;
+	int stat = 0, len = 0;
 	char *dir = NULL;
+	char *home;
 
 	if (!cmm[1] || *cmm[1] == '~')
 	{
-		if (chdir("/home/vagrant") == 0)
+		home = getVarEnv("HOME", env);
+		if (chdir(home) == 0)
 			getcwd(dir, sizeof(dir));
 		return (0);
 	}
 	else if (*cmm[1] == '-' && !cmm[1][1])
 	{
-		write(STDIN_FILENO, "home/vagrant\n", 13);
-		if (chdir("/home/vagrant") == 0)
+		home = getVarEnv("OLDPWD", env);
+		len = _strlen(home);
+		write(STDIN_FILENO, home, len);
+		write(STDIN_FILENO, "\n", 1);
+		if (chdir(home) == 0)
 			getcwd(dir, sizeof(dir));
 		return (0);
 	}

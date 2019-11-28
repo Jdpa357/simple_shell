@@ -17,20 +17,20 @@ int _exec(char **args, char **env)
 	char *path;
 
 	path = findPath(args[0], env);
-	if (path == NULL)
-	{
-		perror(args[0]);
-		return (0);
-	}
+
 	child_id = fork();
 	if (child_id == 0)
 	{
-		if (path != NULL)
-			if (execve(path, args, env) == -1)
-			{
-				close(STDIN_FILENO);
-				perror("Error: Command not found");
-			}
+		if (path == NULL)
+		{
+			perror(args[0]);
+			exit(127);
+		}
+		if (execve(path, args, env) == -1)
+		{
+			close(STDIN_FILENO);
+			perror("Error: Command not found");
+		}
 	}
 	else if (child_id == -1)
 	{
@@ -62,12 +62,6 @@ char *findPath(char *exe, char **env)
 
 	tmp = malloc(1024 * sizeof(char));
 	aux = malloc(sizeof(struct stat));
-	if (stat(exe, aux) == 0)
-	{
-		free(tmp);
-		free(aux);
-		return (exe);
-	}
 
 	path = getVarEnv("PATH", env);
 	path = _strdup(path);
@@ -89,6 +83,13 @@ char *findPath(char *exe, char **env)
 
 		buff = strtok(NULL, ":");
 		_strcpy(tmp, buff);
+	}
+
+	if (stat(exe, aux) == 0)
+	{
+		free(tmp);
+		free(aux);
+		return (exe);
 	}
 
 	free(path);
