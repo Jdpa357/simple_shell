@@ -17,6 +17,20 @@ Learning Objectives
 * How to suspend the execution of a process until one of its children terminates
 * What is EOF / "end-of-file"?
 
+# Environment
+
+Simple shell was built on Ubuntu LTS 14.04, and compiled with gcc 4.8.
+
+#Installation
+
+Clone or download this repo and run.
+
+```bash
+git clone https://github.com/Jdpa357/simple_shell.git
+cd simple_shell
+gcc -Wall -Werror -pedantic *.c -o hsh
+./hsh
+```
 # About:
 
 The **Shell** is a command interpretor in an operating system such as **Unix** or **GNU/Linux**, it is a program that executes other programs. It provides a computer user an interface to the UNIX/GNU Linux system so that the user can run different commands or utilities/tools with some input data.
