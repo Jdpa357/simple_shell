@@ -21,7 +21,7 @@ Learning Objectives
 
 Simple shell was built on Ubuntu LTS 14.04, and compiled with gcc 4.8.
 
-#Installation
+# Installation
 
 Clone or download this repo and run.
 
