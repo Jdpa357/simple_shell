@@ -5,6 +5,7 @@
  *
  * @cmm: Parameter of the directory to change to. if no directory is given,
  * change to home directory
+ * @env: Enviroment variables
  * Return: Always 0 (Success)
  */
 
